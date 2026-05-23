@@ -23,4 +23,6 @@ public class TaskItem
 
     public int CreatedByUserId { get; set; }
     public User CreatedByUser { get; set; } = null!;
+
+    public List<TaskAttachment> Attachments { get; set; } = [];
 }

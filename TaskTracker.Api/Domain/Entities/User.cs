@@ -23,4 +23,6 @@ public class User
     public DateTime CreatedAtUtc { get; set; }
 
     public List<TaskItem> CreatedTasks { get; set; } = new();
+    
+    public List<TaskAttachment> TaskAttachments { get; set; } = new();
 }

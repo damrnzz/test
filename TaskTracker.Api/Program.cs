@@ -22,6 +22,7 @@ app.MapAuthEndpoints();
 app.MapUserEndpoints();
 app.MapProjectEndpoints();
 app.MapTaskEndpoints();
+app.MapAttachmentEndpoints();
 
 
 using (var scope = app.Services.CreateScope())

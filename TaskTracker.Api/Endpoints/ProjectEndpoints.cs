@@ -23,8 +23,7 @@ public static  class ProjectEndpoints
                 return Results.Created($"/api/projects/{created.Id}", created);
             })
             .RequireAuthorization(policy => policy.RequireRole("Admin", "Manager"));
-        group.MapGet("/",)
-
+        
         return app;
     }
 }

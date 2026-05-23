@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using TaskTracker.Api.Domain.Entities;
+using TaskTracker.Api.Dtos.Attachments;
 using TaskTracker.Api.Dtos.Projects;
 using TaskTracker.Api.Dtos.Tasks;
 
@@ -14,5 +15,9 @@ public class MappingProfile: Profile
         CreateMap<TaskItem, TaskResponse>()
             .ForMember(dest => dest.ProjectName, opt => opt.MapFrom(src => src.Project.Name))
             .ForMember(dest => dest.CreatedByLogin, opt => opt.MapFrom(src => src.CreatedByUser.Login));
+        
+        CreateMap<TaskAttachment, AttachmentResponse>()
+            .ForMember(dest => dest.UploadedByUserName,
+                opt => opt.MapFrom(src => src.UploadedByUser.Login));
     }
 }

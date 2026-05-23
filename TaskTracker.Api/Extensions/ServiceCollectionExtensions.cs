@@ -57,6 +57,9 @@ public static class ServiceCollectionExtensions
             client.BaseAddress = new Uri("https://api.quotable.io");
             client.Timeout = TimeSpan.FromSeconds(5);
         });
+        
+        services.AddScoped<IAttachmentRepository, AttachmentRepository>();
+        services.AddScoped<IAttachmentService, AttachmentService>();
 
         return services;
     }
